@@ -23,6 +23,9 @@
 
   <!-- header CSS -->
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
+  
+  <!-- header CSS -->
+  <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
   <!-- Angle down icon -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -40,7 +43,7 @@
   <!-- Top nav bar (fixed) -->
   <nav>
     <span class="title">tweeter</span>
-    <div class="newTweet">
+    <div class="write-tweet">
       <div><b>Write</b> a new tweet</div>
       <i class="fa-solid fa-angles-down" style="color: #d11f1f;"></i>
     </div>
@@ -53,7 +56,19 @@
   </header>
 
   <!-- Page-specific (main) content here -->
-  <main class="container"></main>
+  <main class="container">
+    <section class="new-tweet">
+      <h2>Compose Tweet</h2>
+      <form method="POST" action="/tweets" class="tweet-button">
+        <label for="tweet-text">What are you humming about?</label>
+        <textarea name="text" id="tweet-text"></textarea>
+        <div class="tweet-footer">
+          <button type="submit">Tweet</button>
+          <output name="counter" class="counter" for="tweet-text">140</output>
+        </div>
+      </form>
+    </section>
+  </main>
 </body>
 
 </html>

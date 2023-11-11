@@ -1,0 +1,24 @@
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.tweet-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#tweet-text {
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  border: none;
+  border-bottom: solid 5px darkgoldenrod;
+  margin-bottom: 1.2em;
+}
