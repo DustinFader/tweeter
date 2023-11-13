@@ -22,3 +22,7 @@
   border-bottom: solid 5px darkgoldenrod;
   margin-bottom: 1.2em;
 }
+
+.over-limit {
+  color: red;
+}
