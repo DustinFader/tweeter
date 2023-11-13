@@ -23,6 +23,19 @@
   margin-bottom: 1.2em;
 }
 
+#tweet-text:focus {
+  background-color: rgb(255, 240, 225);
+}
+
 .over-limit {
   color: red;
+}
+
+button {
+  font-family: 'bungee', 'san-serif';
+  background-color: #4056A1;
+  color: #FFFFFF;
+}
+output {
+  font-family: 'bungee', 'san-serif';
 }
