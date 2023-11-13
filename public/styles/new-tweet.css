@@ -39,3 +39,21 @@ button {
 output {
   font-family: 'bungee', 'san-serif';
 }
+
+hr {
+  width: 100%;
+  border: none;
+  height: 4px;
+  background-color: rgb(125, 125, 125);
+}
+
+.tweet-box {
+  display: flex;
+  border: 5px solid rgb(125, 125, 125);
+  padding: 10px;
+}
+
+.tweet-box:hover {
+  display: flex;
+  box-shadow: #4056A1;
+}
