@@ -62,21 +62,29 @@
       <h2>Compose Tweet</h2>
       <form method="POST" action="/tweets" class="tweet-button">
         <label for="tweet-text">What are you humming about?</label>
-        <hr style="width:100%;">
+        <textarea name="text" id="tweet-text"></textarea>
         <div class="tweet-footer">
           <button type="submit">Tweet</button>
           <output name="counter" class="counter" for="tweet-text">140</output>
         </div>
-        <article class="tweet-box">
+        <article>
           <div>
-            <h2>Newton</h2>
-            <p>@handle</p>
+            <div>
+              <i class="fa-solid fa-robot fa-2x icon no-hover"></i>
+              <h2>Dustin</h2>
+            </div>
+            <p>@codeslayer</p>
           </div>
-          <textarea name="text" id="tweet-text"></textarea>
-          <p>10 days ago</p>
-          <i class="fa-solid fa-flag"></i>
-          <i class="fa-solid fa-retweet"></i>
-          <i class="fa-solid fa-heart-circle-plus"></i>
+          <h3>Bottington has gone to Jorgenton.</h3>
+          <hr>
+          <div>
+            <p>10 days ago</p>
+            <div>
+              <i class="fa-solid fa-flag"></i>
+              <i class="fa-solid fa-retweet"></i>
+              <i class="fa-solid fa-heart-circle-plus"></i>
+            </div>
+          </div>
         </article>
       </form>
     </section>

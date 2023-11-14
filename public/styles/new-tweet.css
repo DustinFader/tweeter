@@ -36,6 +36,12 @@ button {
   background-color: #4056A1;
   color: #FFFFFF;
 }
+
+button:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
 output {
   font-family: 'bungee', 'san-serif';
 }
@@ -47,13 +53,29 @@ hr {
   background-color: rgb(125, 125, 125);
 }
 
-.tweet-box {
+article {
   display: flex;
+  flex-direction: column;
   border: 5px solid rgb(125, 125, 125);
   padding: 10px;
+  border-radius: 5px;
 }
 
-.tweet-box:hover {
+article:hover {
   display: flex;
-  box-shadow: #4056A1;
+  box-shadow: 5px 5px 10px #888888;;
+}
+
+article div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+i:hover {
+  color: rgb(255, 166, 0);
+}
+
+.no-hover {
+  pointer-events: none;
 }
