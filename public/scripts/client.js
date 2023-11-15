@@ -35,33 +35,37 @@ const renderTweets = function (tweets) {
   })
 }
 
-
 const createTweetElement = function (tweetData) {
   const $tweet = $(`
-    <article>
-        <div>
-          <div>
-            <img src="${tweetData.user.avatars}" alt="User Avatar">
-            <h2>${tweetData.user.name}</h2>
-          </div>
-          <span>${tweetData.user.handle}</span>
+  <article>
+  <div>
+  <div>
+  <img src="${tweetData.user.avatars}" alt="User Avatar">
+  <h2>${tweetData.user.name}</h2>
+  </div>
+  <span>${tweetData.user.handle}</span>
+  </div>
+  <h3>${tweetData.content.text}</h3>
+  <hr>
+  <div>
+  <p>${new Date(tweetData.created_at)}</p>
+  <div>
+  <i class="fa-solid fa-flag"></i>
+  <i class="fa-solid fa-retweet"></i>
+  <i class="fa-solid fa-heart-circle-plus"></i>
+  </div>
         </div>
-        <h3>${tweetData.content.text}</h3>
-        <hr>
-        <div>
-          <p>${new Date(tweetData.created_at)}</p>
-          <div>
-            <i class="fa-solid fa-flag"></i>
-            <i class="fa-solid fa-retweet"></i>
-            <i class="fa-solid fa-heart-circle-plus"></i>
-          </div>
-        </div>
-      </article>
+        </article>
   `);
   return $tweet;
 };
 
 $(document).ready(function () {
   renderTweets(data);
+  $('.tweet-button').on('submit', function(event) {
+    event.preventDefault();
+    console.log($(this).serialize());
+    $.post('/tweets', $(this).serialize());
+  })
 });
 
