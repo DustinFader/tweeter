@@ -30,8 +30,6 @@ body {
 
 
 main {
-  display: flex;
-  justify-content: center;
   width: 90%;
   background-color: #f4f1ec;
   margin: 0 auto;
