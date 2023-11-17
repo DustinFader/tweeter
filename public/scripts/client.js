@@ -2,9 +2,10 @@ const renderTweets = function (tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
+  $('#tweets-container').empty();
   tweets.forEach((tweet) => {
     const $tweet = createTweetElement(tweet);
-    $("#tweets-container").append($tweet); // Append the tweet to the container
+    $("#tweets-container").prepend($tweet); // Append the tweet to the container
   });
 };
 
@@ -49,7 +50,7 @@ $(document).ready(function () {
     }
 
     $.post("/tweets", $(this).serialize());
-    $.get("/tweets", { method: "GET" }).then(function (data) {
+    $.get("/tweets", { method: "GET" }).done(function (data) {
       renderTweets(data);
     });
   });
