@@ -9,20 +9,26 @@ const renderTweets = function (tweets) {
   });
 };
 
+const escap = function (str) {
+  let div = document.createElement("div");
+  div.appendChild(document.createTextNode(str));
+  return div.innerHTML;
+}
+
 const createTweetElement = function (tweetData) {
   const $tweet = $(`
   <article>
   <div>
   <div>
-  <img src="${tweetData.user.avatars}" alt="User Avatar">
-  <h2>${tweetData.user.name}</h2>
+  <img src="${escap(tweetData.user.avatars)}" alt="User Avatar">
+  <h2>${escap(tweetData.user.name)}</h2>
   </div>
-  <span>${tweetData.user.handle}</span>
+  <span>${escap(tweetData.user.handle)}</span>
   </div>
-  <h3>${tweetData.content.text}</h3>
+  <h3>${escap(tweetData.content.text)}</h3>
   <hr>
   <div>
-  <p>${timeago.format(new Date(tweetData.created_at))}</p>
+  <p>${escap(timeago.format(new Date(tweetData.created_at)))}</p>
   <div>
   <i class="fa-solid fa-flag"></i>
   <i class="fa-solid fa-retweet"></i>
