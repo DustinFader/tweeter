@@ -34,3 +34,10 @@ main {
   background-color: #f4f1ec;
   margin: 0 auto;
 }
+
+.error {
+  color: #f00;
+  display: none;
+  border-color: #f00;
+  width: 100%;
+}
