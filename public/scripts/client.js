@@ -43,15 +43,19 @@ const createTweetElement = function (tweetData) {
 $(document).ready(function () {
   $(".tweet-button").on("submit", function (event) {
     event.preventDefault();
-    const text = $(this).find("textarea").val();
+    const textLength = $(this).find("textarea").val().length;
     
-    if (!text) {
-      alert("Empty tweet");
+    if (!textLength) {
+      $(".error").slideToggle("slow", () => {
+        $(".error").val("Cant tweet an empty tweet");
+      });
       return;
     }
-
-    if (text > 140) {
-      alert("Tweet too long")
+    
+    if (textLength > 140) {
+      $(".error").slideToggle("slow", () => {
+        $(".error").val("Tweet too long, has to be below 140 characters");
+      });
       return;
     }
 
