@@ -46,22 +46,25 @@ $(document).ready(function () {
     const textLength = $(this).find("textarea").val().length;
     
     if (!textLength) {
-      $(".error").slideToggle("slow", () => {
+      $(".error").slideDown("slow", () => {
         $(".error").val("Cant tweet an empty tweet");
       });
       return;
-    }
-    
-    if (textLength > 140) {
-      $(".error").slideToggle("slow", () => {
+    } else if (textLength > 140) {
+      $(".error").slideDown("slow", () => {
         $(".error").val("Tweet too long, has to be below 140 characters");
       });
       return;
+    } else {
+      $(".error").slideUp("slow");
     }
 
-    $.post("/tweets", $(this).serialize());
-    $.get("/tweets", { method: "GET" }).done(function (data) {
-      renderTweets(data);
-    });
+    $.post("/tweets", $(this).serialize()).done(() => {$.ajax({
+      url : "/tweets",
+      method : 'GET',
+      success : function (data) {
+        renderTweets(data)},
+      fail : console.log('Rendering tweets has failed')
+    })});
   });
 });
