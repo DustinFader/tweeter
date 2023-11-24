@@ -21,10 +21,13 @@
   <!-- Nav CSS -->
   <link rel="stylesheet" href="/styles/nav.css" type="text/css" />
 
+  <!-- Media CSS -->
+  <link rel="stylesheet" href="/styles/media.css" type="text/css" />
+
   <!-- header CSS -->
   <link rel="stylesheet" href="/styles/header.css" type="text/css" />
 
-  <!-- header CSS -->
+  <!-- tweet CSS -->
   <link rel="stylesheet" href="/styles/new-tweet.css" type="text/css" />
 
   <!-- Angle down icon -->
@@ -32,19 +35,8 @@
     integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- External JS -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-
-  <!-- timeago library -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
-    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-  <!-- App JS -->
-  <script type="text/javascript" src="/scripts/client.js"></script>
-  <script src="./scripts/composer-char-counter.js"></script>
-</head>
-
+  </head>
+  
 <body>
   <!-- Top nav bar (fixed) -->
   <nav>
@@ -54,13 +46,13 @@
       <i class="fa-solid fa-angles-down" style="color: #d11f1f;"></i>
     </div>
   </nav>
-
+  
   <header>
     <img src="/images/profile-hex.png">
     <br>
     <h2>Dustin Fader</h2>
   </header>
-
+  
   <!-- Page-specific (main) content here -->
   <main class="container">
     <section class="new-tweet">
@@ -79,6 +71,17 @@
     </section>
     <section id="tweets-container"></section>
   </main>
+  <!-- External JS -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  
+  <!-- timeago library -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/timeago.js/4.0.2/timeago.min.js"
+    integrity="sha512-SVDh1zH5N9ChofSlNAK43lcNS7lWze6DTVx1JCXH1Tmno+0/1jMpdbR8YDgDUfcUrPp1xyE53G42GFrcM0CMVg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+  <!-- App JS -->
+  <script type="text/javascript" src="/scripts/client.js"></script>
+  <script src="./scripts/composer-char-counter.js"></script>
 </body>
 
 </html>
