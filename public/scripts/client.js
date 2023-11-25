@@ -66,7 +66,7 @@ $(document).ready(function() {
       return;
     } else if (textLength > 140) {
       $("#error").slideDown("slow", () => {
-        $("#error").val("Tweet too long, has to be below 140 characters");
+        $("#error").val("Tweet has to be below 140 characters");
       });
       return;
     } else {
