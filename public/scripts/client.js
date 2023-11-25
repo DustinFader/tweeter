@@ -1,7 +1,4 @@
 const renderTweets = function(tweets) {
-  // loops through tweets
-  // calls createTweetElement for each tweet
-  // takes return value and appends it to the tweets container
   $('#tweets-container').empty();
   tweets.forEach((tweet) => {
     const $tweet = createTweetElement(tweet);
@@ -9,6 +6,7 @@ const renderTweets = function(tweets) {
   });
 };
 
+// prevents input from altering the website.
 const escap = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
@@ -54,14 +52,16 @@ $(document).ready(function() {
       }
     });
   };
+
   loadTweets();
+
   $(".tweet-button").on("submit", function(event) {
     event.preventDefault();
     loadTweets();
     const textLength = $(this).find("textarea").val().length;
     if (!textLength) {
       $(".error").slideDown("slow", () => {
-        $(".error").val("Cant tweet an empty tweet");
+        $(".error").val("Can't tweet an empty tweet");
       });
       return;
     } else if (textLength > 140) {
