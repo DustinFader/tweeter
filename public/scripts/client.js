@@ -18,33 +18,45 @@ const escap = function (str) {
 const createTweetElement = function (tweetData) {
   const $tweet = $(`
   <article>
-  <div>
-  <div>
-  <img src="${escap(tweetData.user.avatars)}" alt="User Avatar">
-  <h2>${escap(tweetData.user.name)}</h2>
-  </div>
-  <span>${escap(tweetData.user.handle)}</span>
-  </div>
-  <h3>${escap(tweetData.content.text)}</h3>
-  <hr>
-  <div>
-  <p>${escap(timeago.format(new Date(tweetData.created_at)))}</p>
-  <div>
-  <i class="fa-solid fa-flag"></i>
-  <i class="fa-solid fa-retweet"></i>
-  <i class="fa-solid fa-heart-circle-plus"></i>
-  </div>
-        </div>
-        </article>
+    <div class="tweet-header">
+      <div>
+        <img src="${escap(tweetData.user.avatars)}" alt="User Avatar">
+        <h2>${escap(tweetData.user.name)}</h2>
+      </div>
+      <span>${escap(tweetData.user.handle)}</span>
+    </div>
+    <h3>${escap(tweetData.content.text)}</h3>
+    <hr>
+    <div>
+      <p>${escap(timeago.format(new Date(tweetData.created_at)))}</p>
+      <div>
+      <i class="fa-solid fa-flag"></i>
+      <i class="fa-solid fa-retweet"></i>
+      <i class="fa-solid fa-heart-circle-plus"></i>
+      </div>
+    </div>
+  </article>
   `);
   return $tweet;
 };
 
+
 $(document).ready(function () {
+  const loadTweets = () => {
+    $.ajax({
+      url: "/tweets",
+      method: 'GET',
+      success: function (data) {
+        renderTweets(data)
+      },
+      error: (err) => { console.log('Rendering tweets has failed', err) }
+    })
+  }
+  loadTweets();
   $(".tweet-button").on("submit", function (event) {
     event.preventDefault();
+    loadTweets();
     const textLength = $(this).find("textarea").val().length;
-    
     if (!textLength) {
       $(".error").slideDown("slow", () => {
         $(".error").val("Cant tweet an empty tweet");
@@ -59,12 +71,6 @@ $(document).ready(function () {
       $(".error").slideUp("slow");
     }
 
-    $.post("/tweets", $(this).serialize()).done(() => {$.ajax({
-      url : "/tweets",
-      method : 'GET',
-      success : function (data) {
-        renderTweets(data)},
-      fail : console.log('Rendering tweets has failed')
-    })});
+    $.post("/tweets", $(this).serialize()).done(() => { loadTweets(); });
   });
 });
