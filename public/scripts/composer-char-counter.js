@@ -1,6 +1,6 @@
 $(document).ready(function() {
   $('#tweet-text').on('input', function() {
-    const textLength = $(this).val().length;
+    const textLength = $(this).val().trim().length;
     const maxLength = 140;
     const counterValue = maxLength - textLength;
     const counter = this.parentNode.counter;
