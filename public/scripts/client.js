@@ -18,15 +18,15 @@ const createTweetElement = function(tweetData) {
   <article>
     <div class="tweet-header">
       <div>
-        <img src="${escap(tweetData.user.avatars)}" alt="User Avatar">
-        <h2>${escap(tweetData.user.name)}</h2>
+        <img src="${tweetData.user.avatars}" alt="User Avatar">
+        <h2>${tweetData.user.name}</h2>
       </div>
-      <span>${escap(tweetData.user.handle)}</span>
+      <span>${tweetData.user.handle}</span>
     </div>
     <h3>${escap(tweetData.content.text)}</h3>
     <hr>
     <div>
-      <p>${escap(timeago.format(new Date(tweetData.created_at)))}</p>
+      <p>${timeago.format(new Date(tweetData.created_at))}</p>
       <div>
       <i class="fa-solid fa-flag"></i>
       <i class="fa-solid fa-retweet"></i>
