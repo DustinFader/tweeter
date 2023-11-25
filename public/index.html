@@ -62,7 +62,7 @@
         </label>
         <form method="POST" action="/tweets" class="tweet-button">
           <label for="tweet-text">What are you humming about?</label>
-          <textarea name="text" id="tweet-text"></textarea>
+          <textarea name="text" id="tweet-text" maxlength="440"></textarea>
           <div class="tweet-footer">
             <button type="submit">Tweet</button>
             <output name="counter" class="counter" for="tweet-text">140</output>
