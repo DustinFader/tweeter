@@ -1,7 +1,8 @@
 .new-tweet {
   display: flex;
   flex-direction: column;
-  width: 100%;
+  justify-content: center;
+  font-family: sans-serif;
 }
 
 .tweet-button {
@@ -64,7 +65,6 @@ article {
 }
 
 article:hover {
-  display: flex;
   box-shadow: 5px 5px 10px #888888;;
 }
 
@@ -80,4 +80,15 @@ i:hover {
 
 .no-hover {
   pointer-events: none;
+}
+
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+@media screen and (min-width: 1024px) {
+  .new-tweet {
+    width: 100%;   
+  }
 }

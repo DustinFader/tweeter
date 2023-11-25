@@ -41,3 +41,34 @@ main {
   border-color: #f00;
   width: 100%;
 }
+
+.rapper {
+  width: 100%;
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+  }
+  
+  main {
+    width: 100%;
+    align-items: flex-end;
+  }
+
+  .container {
+    width: 42%;
+    display: flex;
+    margin-top: 6em;
+    margin-right: 2em;
+    flex-direction: column;
+  }
+  
+  .rapper {
+    display: flex;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+}
