@@ -33,7 +33,7 @@
 }
 
 button {
-  font-family: 'bungee', 'san-serif';
+  font-family: "bungee", "san-serif";
   background-color: #4056A1;
   color: #FFFFFF;
   margin-bottom: 10px;
@@ -45,7 +45,7 @@ button:hover {
 }
 
 output {
-  font-family: 'bungee', 'san-serif';
+  font-family: "bungee", "san-serif";
 }
 
 hr {
@@ -65,7 +65,7 @@ article {
 }
 
 article:hover {
-  box-shadow: 5px 5px 10px #888888;;
+  box-shadow: 5px 5px 10px #888888;
 }
 
 article div {
@@ -89,6 +89,6 @@ i:hover {
 
 @media screen and (min-width: 1024px) {
   .new-tweet {
-    width: 100%;   
+    width: 100%;
   }
 }
