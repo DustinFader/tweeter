@@ -1,4 +1,4 @@
-const renderTweets = function (tweets) {
+const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
@@ -9,13 +9,13 @@ const renderTweets = function (tweets) {
   });
 };
 
-const escap = function (str) {
+const escap = function(str) {
   let div = document.createElement("div");
   div.appendChild(document.createTextNode(str));
   return div.innerHTML;
-}
+};
 
-const createTweetElement = function (tweetData) {
+const createTweetElement = function(tweetData) {
   const $tweet = $(`
   <article>
     <div class="tweet-header">
@@ -41,19 +41,21 @@ const createTweetElement = function (tweetData) {
 };
 
 
-$(document).ready(function () {
+$(document).ready(function() {
   const loadTweets = () => {
     $.ajax({
       url: "/tweets",
       method: 'GET',
-      success: function (data) {
-        renderTweets(data)
+      success: function(data) {
+        renderTweets(data);
       },
-      error: (err) => { console.log('Rendering tweets has failed', err) }
-    })
-  }
+      error: (err) => {
+        console.log('Rendering tweets has failed', err);
+      }
+    });
+  };
   loadTweets();
-  $(".tweet-button").on("submit", function (event) {
+  $(".tweet-button").on("submit", function(event) {
     event.preventDefault();
     loadTweets();
     const textLength = $(this).find("textarea").val().length;
@@ -71,6 +73,8 @@ $(document).ready(function () {
       $(".error").slideUp("slow");
     }
 
-    $.post("/tweets", $(this).serialize()).done(() => { loadTweets(); });
+    $.post("/tweets", $(this).serialize()).done(() => {
+      loadTweets();
+    });
   });
 });
