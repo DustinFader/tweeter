@@ -29,7 +29,7 @@ main {
   margin: 0 auto;
 }
 
-.error {
+#error {
   color: #f00;
   display: none;
   border-color: #f00;
