@@ -73,8 +73,11 @@ $(document).ready(function() {
       $(".error").slideUp("slow");
     }
 
+    // posts user input into new tweet and resets
     $.post("/tweets", $(this).serialize()).done(() => {
       loadTweets();
+      $(this).find("textarea").val("");
+      $(this).find("output").val(140);
     });
   });
 });
