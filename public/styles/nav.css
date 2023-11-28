@@ -10,6 +10,7 @@ nav {
   position: fixed;
   padding-right: 1em;
   padding-left: 1em;
+  top: 0px;
 }
 
 i {
@@ -28,4 +29,21 @@ span {
 .write-tweet {
   display: flex;
   flex-direction: column;
+  align-items: center;
+}
+
+.bounce {
+  animation-duration: 0.7s;
+  animation-name: bounce;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes bounce {
+  from {
+    transform: translateY(0%);
+  }
+  to {
+    transform: translateY(25%);
+  }
 }
