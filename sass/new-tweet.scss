@@ -1,0 +1,98 @@
+
+
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: sans-serif;
+}
+
+.tweet-button {
+  display: flex;
+  flex-direction: column;
+}
+
+.tweet-footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+#tweet-text {
+  background-color: transparent;
+  resize: none;
+  outline: none;
+  border: none;
+  border-bottom: solid 5px darkgoldenrod;
+  margin-bottom: 1.2em;
+}
+
+#tweet-text:focus {
+  background-color: rgb(255, 240, 225);
+}
+
+.over-limit {
+  color: red;
+}
+
+button {
+  font-family: "bungee", "san-serif";
+  background-color: #4056A1;
+  color: #FFFFFF;
+  margin-bottom: 10px;
+}
+
+button:hover {
+  background-color: #008CBA;
+  color: white;
+}
+
+output {
+  font-family: "bungee", "san-serif";
+}
+
+hr {
+  width: 100%;
+  border: none;
+  height: 4px;
+  background-color: rgb(125, 125, 125);
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  border: 5px solid rgb(125, 125, 125);
+  padding: 10px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  word-wrap: break-word;
+}
+
+article:hover {
+  box-shadow: 5px 5px 10px #888888;
+}
+
+article div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+i:hover {
+  color: rgb(255, 166, 0);
+}
+
+.no-hover {
+  pointer-events: none;
+}
+
+.tweet-header {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Desktop */
+@media screen and (min-width: 1024px) {
+  .new-tweet {
+    width: 100%;
+  }
+}
