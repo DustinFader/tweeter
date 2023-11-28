@@ -52,8 +52,14 @@ $(document).ready(function() {
       }
     });
   };
-
+  
   loadTweets();
+  
+  $('.write-tweet').on("click", () => {
+    $(this).find(".new-tweet").toggle("slow");
+    $(this).find("#tweet-text").focus();
+
+  })
 
   $(".tweet-button").on("submit", function(event) {
     event.preventDefault();
