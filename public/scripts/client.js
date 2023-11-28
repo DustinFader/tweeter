@@ -67,12 +67,12 @@ $(document).ready(function() {
     const textLength = $(this).find("textarea").val().length;
     if (!textLength) {
       $("#error").slideDown("slow", () => {
-        $("#error").val("Can't tweet an empty tweet");
+        $("#error").text("Can't tweet an empty tweet");
       });
       return;
     } else if (textLength > 140) {
       $("#error").slideDown("slow", () => {
-        $("#error").val("Tweet has to be below 140 characters");
+        $("#error").text("Tweet has to be below 140 characters");
       });
       return;
     } else {

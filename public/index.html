@@ -40,11 +40,13 @@
     <span class="title">tweeter</span>
     <div class="write-tweet">
       <div><b>Write</b> a new tweet</div>
-      <i class="fa-solid fa-angles-down" style="color: #d11f1f;"></i>
+      <div class="bounce">
+        <i class="fa-solid fa-angles-down" style="color: #d11f1f;"></i>
+      </div>
     </div>
   </nav>
   
-  <div class="rapper">
+  <!-- <div class="wrapper"> -->
     <header>
       <img src="/images/profile-hex.png" alt=" ">
       <br>
@@ -57,9 +59,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <label for="error">
-          <input type="text" id="error" name="error" readonly>
-        </label>
+          <p id="error"></p>
         <form method="POST" action="/tweets" class="tweet-button">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text" maxlength="440"></textarea>
@@ -71,7 +71,7 @@
     </section>
     <section id="tweets-container"></section>
   </main>
-</div>
+<!-- </div> -->
   
   <!-- External JS -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>

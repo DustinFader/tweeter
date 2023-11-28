@@ -35,6 +35,7 @@ main {
 #error {
   color: #f00;
   display: none;
+  border-style: dashed double;
   border-color: #f00;
 }
 
