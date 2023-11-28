@@ -10,7 +10,6 @@ header {
   /* This is mostly intended for prototyping please download the pattern and re-host for production environments. Thank you! */
 }
 
-/* Desktop */
 @media screen and (min-width: 1024px) {
   header {
     margin-top: 7em;
@@ -18,4 +17,10 @@ header {
     width: 45%;
     position: fixed;
   }
+}
+
+@media (prefers-color-scheme: dark) {
+  h2 {
+    color: aliceblue;
+  } 
 }

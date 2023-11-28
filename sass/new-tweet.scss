@@ -92,3 +92,9 @@ i:hover {
     width: 100%;
   }
 }
+
+@media (prefers-color-scheme: dark) {
+  h3 {
+    color: rgba(97, 52, 0, 0.849)
+  }
+}
